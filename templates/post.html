@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-bar">
+            <nav>
+                <a href="/">Home</a>
+                <a href="#">Posts</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
+    </div>
+    <header>
+        <div class="home-header">
+            <div class="header-class">
+                <h2>Ochuole's Blog</h2>
+                <p>Programming Insights </p>
+            </div>
+        </div>
+    </header> 
+    <section>
+        <div class="post-detail">
+            <div class="post-topic">
+                <h2> {{ object.title }}</h2>
+                <div> {{ object.image.url }}</div>
+            </div>
+            <div class="post-content">
+                <p>{{ object.content }}</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="card-container">
+            <div class="blog-card">
+                <div class="image-section">
+                    <img src="../static/image/programming.jpg" alt="laptop">
+                </div>
+                <div class="text-section">
+                    <h2>lorem</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, magnam!</p>                
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

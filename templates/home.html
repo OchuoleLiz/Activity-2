@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ochuole's Blog{% endblock %}</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-bar">
+            <nav>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="#">Posts</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
+    </div>
+    <header>
+        <div class="home-header">
+            <div class="header-class">
+                <h2>Ochuole's Blog</h2>
+                <p>Programming Insights </p>
+            </div>
+        </div>
+    </header>
+    <section>
+        <h4>Posts:</h4>
+        {% for post in object_list %}
+            {% if post %}
+            <div class="post-title">
+                <ul>
+                    <li><h5><a href="">{{ post.title }}</a></h5></li>
+                </ul>
+            </div>
+            {% else %}
+            <div class="post-title">
+                <h5>No Post Yet.</h5>
+                <button type="submit">Click to add post</button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    <section>
+        <h4>Posts:</h4>
+        {% for post in object_list %}
+            {% if post %}
+            <div class="card-container">
+                <div class="blog-card">
+                    <div class="image-section">
+                        {{ object.image}}
+                    </div>
+                <div class="text-section">
+                    <h2>{{ object.title }}</h2>
+                    <p>{{ object.content }}</p>                
+                </div>
+               </div>
+           </div>
+           {% else %}
+            <div class="post-title">
+                <h5>No Post Yet.</h5>
+                <button type="submit">Click to add post</button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    <section>
+        <div class="card-container">
+            <div class="blog-card">
+                <div class="image-section">
+                    {{ object.image}}
+                </div>
+                <div class="text-section">
+                    <h2>{{ object.title }}</h2>
+                    <p>{{ object.content }}</p>                
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-class">
+            <h6>Created By: Ochuole</h6>
+            <h6>October, 2021</h6>
+        </div>
+    </footer>
+</body>
+</html>

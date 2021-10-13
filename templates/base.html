@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header>
+    <div class="home-header">
+        <div id="sidebar">
+            <h2>Ochuole's Blog</h2>
+            <p>Programming Insights </p>
+        </div>
+        <div class="home-image">
+            <img src="../static/image/programming.jpg" alt="laptop">
+        </div>
+    </div>
+</header>
+<h4>Posts:</h4>
+    {% for post in object_list %}
+        {% if post %}
+            <div class="post-title">
+                <h2><a href="">{{ post.title }}</a></h2>
+            </div>
+            <div class="post-content">
+                <p>{{ post.content }}</p>
+            </div>
+        {% else %}
+            <div class="post-content">
+                <p>No Post Yet.</p>
+                <button type="submit">Click to add post</button>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <section>
+        <div id="sidebar">
+            <h2>Ochuole's Blog</h2>
+            <p>Programming Insights </p>
+        </div>
+    </section>
+{% endblock content %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <section>
+        <div id="sidebar">
+            <h2>Ochuole's Blog</h2>
+            <p>Programming Insights </p>
+        </div>
+    </section>
+{% endblock content %}
