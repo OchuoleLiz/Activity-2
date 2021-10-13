@@ -32,26 +32,17 @@
     <section>
         <div class="post-detail">
             <div class="post-topic">
-                <h2> {{ object.title }}</h2>
-                <div> {{ object.image.url }}</div>
+                <h2> {{ post.title }}</h2>
+                <div class="post-image"><img src="{{ object.image.url }}" alt="image"></div>
             </div>
             <div class="post-content">
-                <p>{{ object.content }}</p>
+                <p>{{ post.content }}</p>
             </div>
         </div>
     </section>
-    <section>
-        <div class="card-container">
-            <div class="blog-card">
-                <div class="image-section">
-                    <img src="../static/image/programming.jpg" alt="laptop">
-                </div>
-                <div class="text-section">
-                    <h2>lorem</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, magnam!</p>                
-                </div>
-            </div>
+    <footer>
+        <div class="footer-class">
+            <h6>Created By: Ochuole</h6>
+            <h6>October, 2021</h6>
         </div>
-    </section>
-</body>
-</html>
+    </footer>

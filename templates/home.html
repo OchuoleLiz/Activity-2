@@ -36,7 +36,8 @@
             {% if post %}
             <div class="post-title">
                 <ul>
-                    <li><h5><a href="">{{ post.title }}</a></h5></li>
+                    <li><h5>{{ post.title }}</h5></li>
+                    <p class = "align-left"><a href="{% url 'post' post.pk %}">Read More...</a></p> 
                 </ul>
             </div>
             {% else %}
@@ -46,42 +47,6 @@
             </div>
             {% endif %}
         {% endfor %}
-    </section>
-    <section>
-        <h4>Posts:</h4>
-        {% for post in object_list %}
-            {% if post %}
-            <div class="card-container">
-                <div class="blog-card">
-                    <div class="image-section">
-                        {{ object.image}}
-                    </div>
-                <div class="text-section">
-                    <h2>{{ object.title }}</h2>
-                    <p>{{ object.content }}</p>                
-                </div>
-               </div>
-           </div>
-           {% else %}
-            <div class="post-title">
-                <h5>No Post Yet.</h5>
-                <button type="submit">Click to add post</button>
-            </div>
-            {% endif %}
-        {% endfor %}
-    </section>
-    <section>
-        <div class="card-container">
-            <div class="blog-card">
-                <div class="image-section">
-                    {{ object.image}}
-                </div>
-                <div class="text-section">
-                    <h2>{{ object.title }}</h2>
-                    <p>{{ object.content }}</p>                
-                </div>
-            </div>
-        </div>
     </section>
     <footer>
         <div class="footer-class">
