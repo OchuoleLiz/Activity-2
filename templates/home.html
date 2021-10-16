@@ -32,13 +32,17 @@
     </header>
     <section>
         <h4>Posts:</h4>
-        {% for post in object_list %}
+        <div class="container">
+            {% for post in object_list %}
             {% if post %}
-            <div class="post-title">
-                <ul>
-                    <li><h5>{{ post.title }}</h5></li>
-                    <p class = "align-left"><a href="{% url 'post' post.pk %}">Read More...</a></p> 
-                </ul>
+            <div class="card">
+                {% if post.image %}
+                <img src="{{ post.image.url }}" alt="image" style="width:18rem; height:12rem">
+                {% endif %}
+                <div class="little-container">
+                <h5>{{ post.title }}</h5>
+                <p class = "align-left"><a href="{% url 'post' post.pk %}">Read More...</a></p> 
+                </div>
             </div>
             {% else %}
             <div class="post-title">
@@ -47,7 +51,7 @@
             </div>
             {% endif %}
         {% endfor %}
-    </section>
+        </div>
     <footer>
         <div class="footer-class">
             <h6>Created By: Ochuole</h6>
